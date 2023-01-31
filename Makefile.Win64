@@ -11,7 +11,7 @@ INCS = /I"C:\src\vcpkg\installed\x64-windows\include" /I"C:\src\vcpkg\installed\
 
 # from SDL 1.2.10
 LIBS = /libpath:"C:\src\vcpkg\installed\x64-windows\lib" SDL2.lib manual-link/SDL2main.lib smpeg2.lib SDL2_ttf.lib SDL2_image.lib SDL2_mixer.lib bz2.lib jpeg.lib vorbisfile.lib iconv.lib shell32.lib
-DEFS = /D "WIN32" /D "UTF8_CAPTION" /D "USE_SDL_RENDERER" /D "_CRT_SECURE_NO_WARNINGS" /D "_CONSOLE"
+DEFS = /D "WIN32" /D "UTF8_CAPTION" /D "USE_SDL_RENDERER" /D "_CRT_SECURE_NO_WARNINGS" /D "_WINDOWS"
 
 EXESUFFIX = .exe
 OBJSUFFIX = .obj
@@ -20,7 +20,7 @@ OBJSUFFIX = .obj
 .SUFFIXES: $(OBJSUFFIX) .cpp .h
 
 CC = cl
-LD = link /nologo /subsystem:CONSOLE /incremental:no /machine:X64 /nodefaultlib:libc /nodefaultlib:msvcrt
+LD = link /nologo /subsystem:WINDOWS /incremental:no /machine:X64 /nodefaultlib:libc /nodefaultlib:msvcrt
 LDOUT = /out:
 
 CFLAGS = /nologo /MT /W3 /EHsc /c /O2 $(INCS) $(DEFS)
